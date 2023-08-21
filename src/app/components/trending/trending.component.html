@@ -1,0 +1,33 @@
+<div class="searched-page">
+  <div class="bootstrap-spinner" *ngIf="loading">
+    <div class="spinner-border Loading" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+
+  <div class="searched-news" *ngIf="!loading">
+    <div
+      class="searched-new"
+      *ngFor="
+        let new of searchedNews | paginate : { itemsPerPage: 7, currentPage: p }
+      "
+    >
+      <div class="searched-new-image">
+        <img src="{{ new.urlToImage }}" alt="" />
+      </div>
+      <div class="searched-new-content">
+        <div class="searched-new-title bold">
+          <a href="{{ new.url }}" target="_blank">{{ new.title }}</a>
+        </div>
+        <div class="searched-new-description">{{ new.description }}</div>
+        <div class="searched-new-date">
+          {{ findMonthName(new.publishedAt) }} {{ findDate(new.publishedAt) }}
+        </div>
+      </div>
+    </div>
+    <pagination-controls
+      class="pagination"
+      (pageChange)="p = $event"
+    ></pagination-controls>
+  </div>
+</div>

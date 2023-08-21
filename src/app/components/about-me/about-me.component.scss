@@ -1,0 +1,142 @@
+.about-me-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 6%;
+  .top-side {
+    width: 75%;
+    display: flex;
+    justify-content: space-between;
+
+    .top-side-left {
+      width: 70%;
+
+      .top-side-title {
+        font-size: 50px;
+        margin-bottom: 50px;
+      }
+
+      p {
+        font-size: 16px;
+        margin: 20px 0;
+      }
+    }
+
+    .top-side-right {
+      width: 25%;
+      align-self: center;
+      i {
+        font-size: 250px;
+      }
+    }
+  }
+
+  .bottom-side {
+    width: 100%;
+    margin: 50px 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+
+    .bottom-card {
+      width: 30%;
+      height: 300px;
+      background-color: #808080;
+      color: white;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .thanks {
+      font-size: 40px;
+    }
+
+    .languages,
+    .contact-me {
+      position: relative;
+
+      .languages-title,
+      .contact-me-title {
+        font-size: 18px;
+        justify-self: flex-start;
+        position: absolute;
+        top: 20px;
+      }
+
+      .languages-list {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap;
+
+        .languages-list-item {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 100px;
+          height: 45px;
+
+          i {
+            font-size: 22px;
+          }
+
+          span {
+            font-size: 13px;
+          }
+        }
+      }
+
+      .contact-me-links {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap;
+
+        .contact-me-link-item {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 60px;
+          height: 45px;
+
+          span {
+            font-size: 13px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 625px) {
+  .about-me-page {
+    padding: 20px 3%;
+    .top-side {
+      width: 100%;
+
+      .top-side-left {
+        width: 100% !important;
+
+        .top-side-title {
+          font-size: 38px;
+        }
+      }
+
+      .top-side-right {
+        display: none;
+      }
+    }
+    .bottom-side {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .bottom-card {
+        width: 100% !important;
+      }
+    }
+  }
+}

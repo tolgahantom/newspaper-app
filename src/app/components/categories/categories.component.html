@@ -1,0 +1,78 @@
+<div class="categories-page">
+  <div class="bootstrap-spinner" *ngIf="loading">
+    <div class="spinner-border Loading" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+  <div class="categories-news" *ngIf="!loading">
+    <div class="categories-news-subtitle">categories</div>
+    <div class="categories-news-title bold">{{ categoryName }}</div>
+    <div class="categories-news-list">
+      <div
+        class="categories-new"
+        *ngFor="
+          let new of news | paginate : { itemsPerPage: 5, currentPage: p }
+        "
+      >
+        <div class="categories-new-content">
+          <div class="categories-new-content-title bold">
+            <a href="{{ new.url }}" target="_blank">{{ new.title }}</a>
+          </div>
+          <div class="categories-new-content-text">
+            {{ new.description }}
+          </div>
+          <span class="writer bold">{{
+            new.author != undefined ? new.author : "Unknown"
+          }}</span>
+          in
+          <span class="category bold">Food</span>
+          <div class="trending-news-timer">
+            <div class="date">
+              {{ findMonthName(new.publishedAt) }}
+              {{ findDate(new.publishedAt) }}
+            </div>
+            <i class="fa-solid fa-circle point"></i>
+            <div class="read-time">3 min read</div>
+            <i class="fa-solid fa-star timer-star"></i>
+          </div>
+        </div>
+
+        <div class="categories-new-image">
+          <img src="{{ new.urlToImage }}" alt="" />
+        </div>
+      </div>
+    </div>
+
+    <pagination-controls
+      class="pagination"
+      (pageChange)="p = $event"
+    ></pagination-controls>
+  </div>
+
+  <div class="trending">
+    <div class="trending-title">Trending</div>
+    <div class="trending-content" *ngFor="let new of popular; let i = index">
+      <div class="trending-number">{{ paddedNumber(i + 1) }}</div>
+      <div class="trending-texts">
+        <div class="trending-text-title">
+          <a href="{{ new.url }}" target="_blank">{{ new.title }}</a>
+        </div>
+        <div class="trending-content-writer">
+          <span class="writer bold">{{ new.author }}</span> in
+          <span class="category bold">Food</span>
+        </div>
+        <div class="trending-news-timer">
+          <div class="date">
+            {{ findMonthName(new.publishedAt) }} {{ findDate(new.publishedAt) }}
+          </div>
+          <i class="fa-solid fa-circle point"></i>
+          <div class="read-time">3 min read</div>
+          <i class="fa-solid fa-star timer-star"></i>
+        </div>
+      </div>
+    </div>
+    <div class="trending-see-all">
+      <a [routerLink]="['/trending']">See All Trend ></a>
+    </div>
+  </div>
+</div>

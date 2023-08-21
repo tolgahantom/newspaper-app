@@ -1,0 +1,106 @@
+.searched-page {
+  padding: 0 6%;
+
+  .cannotFind {
+    color: red;
+    border: 2px solid red;
+    text-transform: uppercase;
+    padding: 7px 15px;
+    font-size: 23px;
+    text-align: center;
+  }
+
+  .bootstrap-spinner {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 1400px;
+  }
+
+  .searched-page-title {
+    font-size: 20px;
+    border-bottom: 1px solid black;
+    display: inline-block;
+    margin: 20px 0;
+
+    .subject {
+      text-transform: capitalize;
+    }
+  }
+
+  .searched-news {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    ::ng-deep {
+      .ngx-pagination {
+        margin: 10px 0;
+        .pagination-previous,
+        .pagination-next {
+          display: none;
+        }
+
+        li {
+          color: #b4b4b4;
+
+          a {
+            &:hover {
+              background-color: transparent;
+            }
+          }
+
+          &:hover {
+            color: #000;
+          }
+
+          &.current {
+            background-color: transparent;
+            color: #000;
+          }
+        }
+      }
+    }
+
+    .searched-new {
+      width: 100%;
+      height: 150px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 20px 0;
+
+      .searched-new-image {
+        background-color: red;
+        width: 20%;
+        height: 100%;
+      }
+
+      .searched-new-content {
+        width: 70%;
+        height: 100%;
+
+        .searched-new-title {
+          font-size: 18px;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+
+        .searched-new-description {
+          font-size: 14px;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+
+        .searched-new-date {
+          font-size: 13px;
+          color: #808080;
+        }
+      }
+    }
+  }
+}

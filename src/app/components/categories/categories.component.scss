@@ -1,0 +1,222 @@
+.categories-page {
+  padding: 50px 6%;
+  display: flex;
+  justify-content: space-between;
+
+  .bootstrap-spinner {
+    width: 75%;
+    display: flex;
+    justify-content: center;
+    height: 1200px;
+  }
+
+  .categories-news {
+    width: 75%;
+
+    ::ng-deep {
+      .ngx-pagination {
+        .pagination-previous,
+        .pagination-next {
+          display: none;
+        }
+
+        li {
+          color: #b4b4b4;
+
+          a {
+            &:hover {
+              background-color: transparent;
+            }
+          }
+
+          &:hover {
+            color: #000;
+          }
+
+          &.current {
+            background-color: transparent;
+            color: #000;
+          }
+        }
+      }
+    }
+
+    .categories-news-subtitle {
+      font-size: 10px;
+      text-transform: uppercase;
+    }
+
+    .categories-news-title {
+      font-size: 20px;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--font-color);
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+
+    .categories-news-list {
+      .categories-new {
+        width: 100%;
+        height: 100%;
+        align-items: flex-start;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        margin: 20px 0;
+
+        .categories-new-content {
+          width: 75%;
+
+          .categories-new-content-text {
+            max-height: 75px;
+            overflow: hidden;
+          }
+
+          .trending-news-timer {
+            font-size: 13px;
+            color: #b4b4b4;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+          }
+
+          .trending-news-timer {
+            justify-content: flex-start;
+          }
+
+          .slider-news-timer i,
+          .trending-news-timer i {
+            margin: 0 5px;
+          }
+
+          .timer-star {
+            font-size: 10px;
+          }
+
+          .point {
+            font-size: 3px;
+          }
+        }
+
+        .categories-new-image {
+          width: 20%;
+          height: 180px;
+          background-color: red;
+        }
+      }
+    }
+
+    .pagination {
+      display: flex;
+      justify-content: center;
+      margin: 40px 0;
+    }
+  }
+
+  .trending {
+    background-color: re;
+    width: 20%;
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    overflow-y: hidden;
+    position: relative;
+
+    .trending-title {
+      border-bottom: 1px solid var(--font-color);
+      font-size: 20px;
+      margin-bottom: 20px;
+      display: inline-block;
+    }
+
+    .trending-content {
+      display: flex;
+      align-items: flex-start;
+      width: 100%;
+      margin-top: 20px;
+
+      .trending-number {
+        margin-top: -5px;
+        margin-right: 10px;
+        font-size: 30px;
+        color: #ccc;
+      }
+
+      .trending-text-title {
+        font-size: 18px;
+      }
+
+      .trending-news-timer {
+        font-size: 13px;
+        color: #b4b4b4;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .trending-news-timer {
+        justify-content: flex-start;
+      }
+
+      .slider-news-timer i,
+      .trending-news-timer i {
+        margin: 0 5px;
+      }
+
+      .timer-star {
+        font-size: 10px;
+      }
+
+      .point {
+        font-size: 3px;
+      }
+    }
+
+    .trending-see-all {
+      font-size: 14px;
+      color: var(--main-green);
+      text-transform: uppercase;
+      position: absolute;
+      bottom: 10px;
+      transition: all 0.3s ease;
+      align-self: flex-start;
+
+      &:hover {
+        color: darken(green, 10%);
+      }
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .categories-page {
+    flex-direction: column;
+
+    .categories-news {
+      width: 100%;
+
+      .categories-new {
+        width: 100%;
+        flex-direction: row-reverse;
+        height: 200px;
+
+        .categories-new-content {
+          width: 75%;
+          font-size: 14px;
+        }
+
+        .categories-new-image {
+          width: 25%;
+          background-color: red;
+        }
+      }
+    }
+
+    .trending {
+      width: 100%;
+      height: 450px;
+    }
+  }
+}

@@ -1,0 +1,50 @@
+/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&display=swap");
+
+:root {
+  --main-green: #8bc34a;
+  --bg-color: #fff;
+  --font-color: #000;
+  --light-gray: #f8f9fa;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Cabin", sans-serif;
+  background-color: var(--bg-color);
+  color: var(--font-color);
+  padding-bottom: 50px;
+  overflow-x: hidden;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+p {
+  margin-bottom: 0 !important;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.categories-div i {
+  display: none;
+}
+
+.categories-icon {
+  display: none;
+}

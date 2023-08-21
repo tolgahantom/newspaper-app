@@ -1,0 +1,146 @@
+<nav class="nav-page">
+  <div class="categories-icon" (click)="toggleMenu()">
+    <i class="fa-solid fa-bars"></i>
+  </div>
+  <div class="top-side">
+    <div class="brand" [routerLink]="['/']">Meranda</div>
+    <div class="social-search">
+      <div class="social">
+        <a href="#">
+          <i class="fa-brands fa-facebook-f"></i>
+        </a>
+        <a href="#">
+          <i class="fa-brands fa-twitter"></i>
+        </a>
+        <a href="#">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+      </div>
+      <form class="search-bar">
+        <input
+          type="text"
+          name="search"
+          id="search"
+          #search
+          placeholder="Seach..."
+          (keydown.enter)="sendDataToService(search.value, $event)"
+        />
+        <i
+          class="fa-solid fa-search search-icon"
+          (click)="sendDataToService(search.value, $event)"
+        ></i>
+      </form>
+    </div>
+  </div>
+</nav>
+
+<div class="categories-div" [ngClass]="{ active: isOpenCategoriesMenu }">
+  <i class="fa-solid fa-x close-icon" (click)="toggleMenu()"></i>
+  <ul class="categories">
+    <li
+      class="category-list-item"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      <a [routerLink]="['/']" (click)="toggleMenu()" class="category-list-link"
+        >Home</a
+      >
+    </li>
+    <li
+      class="category-list-item"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      <a
+        [routerLink]="['/categories/business']"
+        (click)="toggleMenu()"
+        class="category-list-link"
+        >Business</a
+      >
+    </li>
+    <li
+      class="category-list-item"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      <a
+        [routerLink]="['/categories/entertainment']"
+        (click)="toggleMenu()"
+        class="category-list-link"
+        >Entertainment</a
+      >
+    </li>
+    <li
+      class="category-list-item"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      <a
+        [routerLink]="['/categories/general']"
+        class="category-list-link"
+        (click)="toggleMenu()"
+        >General</a
+      >
+    </li>
+    <li
+      class="category-list-item"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      <a
+        [routerLink]="['/categories/health']"
+        class="category-list-link"
+        (click)="toggleMenu()"
+        >Health</a
+      >
+    </li>
+    <li
+      class="category-list-item"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      <a
+        [routerLink]="['/categories/science']"
+        class="category-list-link"
+        (click)="toggleMenu()"
+        >Science</a
+      >
+    </li>
+    <li
+      class="category-list-item"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      <a
+        [routerLink]="['/categories/sports']"
+        class="category-list-link"
+        (click)="toggleMenu()"
+        >Sports</a
+      >
+    </li>
+    <li
+      class="category-list-item"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      <a
+        [routerLink]="['/categories/technology']"
+        class="category-list-link"
+        (click)="toggleMenu()"
+        >Technology</a
+      >
+    </li>
+    <li
+      class="category-list-item"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      <a
+        [routerLink]="['/about-me']"
+        class="category-list-link"
+        (click)="toggleMenu()"
+        >About Me</a
+      >
+    </li>
+  </ul>
+</div>
