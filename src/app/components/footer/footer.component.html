@@ -7,14 +7,90 @@
     </div>
   </div>
   <div class="right-side">
-    <form class="search-bar">
-      <input
-        type="text"
-        name="search"
-        id="search"
-        placeholder="Enter your Email"
-      />
-      <i class="fas fa-paper-plane search-icon"></i>
+    <form
+      class="search-bar"
+      [formGroup]="loginForm"
+      (ngSubmit)="Submit($event)"
+    >
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input
+          type="text"
+          name="name"
+          placeholder="Name Here."
+          formControlName="name"
+        />
+        <div
+          *ngIf="
+            loginForm.get('name')!.hasError('required') &&
+            loginForm.get('name')!.touched
+          "
+          class="alert alert-danger w-100 mt-2"
+        >
+          Name is required.
+        </div>
+        <div
+          *ngIf="
+            loginForm.get('name')!.hasError('minlength') ||
+            (loginForm.get('name')!.hasError('maxlength') &&
+              loginForm.get('name')!.touched)
+          "
+          class="alert alert-danger w-100 mt-2"
+        >
+          Name cannot be shorter than 3 characters and longer than 15 characters
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="Email">Mail</label>
+        <input
+          type="email"
+          name="email"
+          placeholder="Email Here."
+          formControlName="email"
+        />
+        <div
+          *ngIf="
+            loginForm.get('email')!.hasError('required') &&
+            loginForm.get('email')!.touched
+          "
+          class="alert alert-danger w-100 mt-2"
+        >
+          Email is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea
+          id="message"
+          cols="30"
+          rows="5"
+          placeholder="Message Here."
+          formControlName="message"
+        ></textarea>
+        <div
+          *ngIf="
+            loginForm.get('message')!.hasError('required') &&
+            loginForm.get('message')!.touched
+          "
+          class="alert alert-danger w-100 mt-2"
+        >
+          Message is required.
+        </div>
+        <div
+          *ngIf="
+            loginForm.get('message')!.hasError('minlength') ||
+            (loginForm.get('message')!.hasError('maxlength') &&
+              loginForm.get('message')!.touched)
+          "
+          class="alert alert-danger w-100 mt-2"
+        >
+          Message cannot be shorter than 15 characters and longer than 100
+          characters
+        </div>
+      </div>
+      <button type="submit" class="search-icon" [disabled]="loginForm.invalid">
+        Submit
+      </button>
     </form>
   </div>
 </div>

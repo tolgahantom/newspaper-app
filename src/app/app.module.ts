@@ -14,6 +14,7 @@ import { SearchedPageComponent } from './components/searched-page/searched-page.
 import { TrendingComponent } from './components/trending/trending.component';
 import { PopularComponent } from './components/popular/popular.component';
 import { AboutMeComponent } from './components/about-me/about-me.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,8 @@ import { AboutMeComponent } from './components/about-me/about-me.component';
     NgbModule,
     HttpClientModule,
     NgxPaginationModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
